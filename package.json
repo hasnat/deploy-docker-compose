@@ -1,0 +1,23 @@
+{
+  "name": "deploy-docker-compose",
+  "version": "1.0.0",
+  "description": "Github action to deploy docker-compose to docker host/swarm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasnat/deploy-docker-compose.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasnat/deploy-docker-compose/issues"
+  },
+  "homepage": "https://github.com/hasnat/deploy-docker-compose#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  }
+}
