@@ -15,16 +15,16 @@ inputs:
   branch:
     description: 'Repo branch'
     required: false
-  deployto:
+  deploy-to:
     description: 'Server to deploy to'
     required: false
-  composefolder:
+  compose-folder:
     description: 'Use dockerfile when you would like to explicitly build a Dockerfile'
     required: false
-  projectname:
+  project-name:
     description: 'Use workdir when you would like to change the directory for building'
     required: false
-  buildargs:
+  build-args:
     description: 'Use buildargs when you want to pass a list of environment variables as build-args'
     required: false
 
@@ -39,3 +39,12 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.repository }}
+    - ${{ inputs.branch }}
+    - ${{ inputs.deploy-to }}
+    - ${{ inputs.compose-folder }}
+    - ${{ inputs.project-name }}
+    - ${{ inputs.dockerfile }}
+    - ${{ inputs.build-args }}

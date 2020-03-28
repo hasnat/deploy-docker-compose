@@ -12,4 +12,5 @@ function getInputs() {
         'build-args': core.getInput('build-args'),
     };
 }
-core.info(`User passed config '${JSON.stringify(getInputs(), null, 2)}'.`);
+core.error(`User passed config '${JSON.stringify(getInputs(), null, 2)}'.`);
+core.error(`User passed config '${JSON.stringify(process.env, null, 2)}'.`);
