@@ -3,29 +3,17 @@ author: '@hasnat'
 branding:
   icon: 'package'
   color: 'gray-dark'
-description: 'GitHub Actions for Docker actions'
+description: 'Github action to deploy docker-compose to docker host/swarm.'
 
 inputs:
-  token:
-    description: 'repo access token'
-    required: true
-  repository:
-    description: 'Repo to deploy'
-    required: true
-  branch:
-    description: 'Repo branch'
-    required: false
-  deploy-to:
+  deploy_to:
     description: 'Server to deploy to'
     required: false
-  compose-folder:
+  compose_folder:
     description: 'Use dockerfile when you would like to explicitly build a Dockerfile'
     required: false
-  project-name:
-    description: 'Use workdir when you would like to change the directory for building'
-    required: false
-  build-args:
-    description: 'Use buildargs when you want to pass a list of environment variables as build-args'
+  secrets_path:
+    description: 'Key to find secrets'
     required: false
 
 outputs:
