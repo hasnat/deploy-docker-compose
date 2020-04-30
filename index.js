@@ -1,16 +1,12 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 
 function getInputs() {
     return {
-        token: core.getInput('token'),
-        repository: core.getInput('repository'),
-        branch: core.getInput('branch'),
-        'deploy-to': core.getInput('deploy-to'),
-        'compose-folder': core.getInput('compose-folder'),
-        'project-name': core.getInput('project-name'),
-        'build-args': core.getInput('build-args'),
+        'deploy_to': core.getInput('deploy_to'),
+        'compose_folder': core.getInput('compose_folder') || '.',
+        'secrets_path': core.getInput('secrets_path')
     };
 }
 core.error(`User passed config '${JSON.stringify(getInputs(), null, 2)}'.`);
-core.error(`User passed config '${JSON.stringify(process.env, null, 2)}'.`);
+core.error(`Runner Env '${JSON.stringify(process.env, null, 2)}'.`);
+require('./src/index')
